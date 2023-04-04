@@ -1,22 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
 using ironblood.Domain.Catalog;
+using ironblood.Data;
 
 namespace ironblood.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    // made this change 
+    [Route("/catalog")]
     public class CatalogController : ControllerBase
     {
+        private readonly StoreContext _db;
+        
+        public CatalogController(StoreContext db)
+        {
+            _db = db;
+        }
         [HttpGet]
         public IActionResult GetItems()
         {
-            var items = new List<Item>()
-            {
-                new Item("Shirt", "Ohio State Shirt.", "Nike", 29.99m),
-                new Item("Shorts", "Ohio State Shorts.", "Nike", 49.99m)
-            };
-
-            return Ok(items);
+            return Ok(_db.Items);
         }
         }
 
