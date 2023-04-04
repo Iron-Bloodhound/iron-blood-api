@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ironblood.Domain\ironblood.Domain.csproj" />
+    <ProjectReference Include="..\ironblood.Data\ironblood.Data.csproj" />
   </ItemGroup>
 
 </Project>
