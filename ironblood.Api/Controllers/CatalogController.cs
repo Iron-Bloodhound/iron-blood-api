@@ -20,7 +20,7 @@ namespace ironblood.Api.Controllers
         {
             return Ok(_db.Items);
         }
-        }
+        
 
         [HttpGet("{id:int}")]
         public IActionResult GetItem(int id)
@@ -38,7 +38,7 @@ namespace ironblood.Api.Controllers
         }
 
         [HttpPost("{id:int}/ratings")]
-        public IActionResult PostRating)int id, [FromBody] Rating rating)
+        public IActionResult PostRating(int id, [FromBody] Rating rating)
         {
             var item = new Item("Shirt", "Ohio State Shirt.", "Nike", 29.99m);
             item.Id = id;
@@ -58,4 +58,5 @@ namespace ironblood.Api.Controllers
         {
             return NoContent();
         }
+    }
 }
