@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ironblood.Domain.Catalog;
 using ironblood.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ironblood.Api.Controllers
 {
@@ -25,7 +26,7 @@ namespace ironblood.Api.Controllers
         [HttpGet("{id:int}")]
         public IActionResult GetItem(int id)
         {
-            var item = _db.Items.Find(Id);
+            var item = _db.Items.Find(id);
             if(item == null)
             {
                 return NotFound();
@@ -60,7 +61,7 @@ namespace ironblood.Api.Controllers
         [HttpPut("{id:int}")]
         public IActionResult Put(int id, Item item)
         {
-            if(id != item.id)
+            if(id != item.Id)
             {
                 return BadRequest();
             }
@@ -70,7 +71,7 @@ namespace ironblood.Api.Controllers
             }
 
             _db.Entry(item).State = EntityState.Modified;
-            _db.SaveChanges;
+            _db.SaveChanges();
             return NoContent();
         }
 
