@@ -1,11 +1,13 @@
 ﻿using ironblood.Domain.Catalog;
+using ironblood.Domain.Orders;
 using Microsoft.EntityFrameworkCore;
 
 namespace ironblood.Data
 {
     public class StoreContext : DbContext
     {
-        public StoreContext(DbContextOptions<StoreContext> options) : base(options)
+        public StoreContext(DbContextOptions<StoreContext> options) 
+            : base(options)
         { }
 
         public DbSet<Item> Items {get; set;}
