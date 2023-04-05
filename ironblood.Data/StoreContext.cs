@@ -1,4 +1,5 @@
 ﻿using ironblood.Domain.Catalog;
+using ironblood.Domain.Orders;
 using Microsoft.EntityFrameworkCore;
 
 namespace ironblood.Data
