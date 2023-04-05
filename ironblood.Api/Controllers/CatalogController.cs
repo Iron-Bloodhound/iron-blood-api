@@ -71,7 +71,7 @@ namespace ironblood.Api.Controllers
             }
 
             _db.Entry(item).State = EntityState.Modified;
-            _db.SaveChanges;
+            _db.SaveChanges();
             return NoContent();
         }
 
