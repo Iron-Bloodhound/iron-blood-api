@@ -7,7 +7,7 @@ namespace ironblood.Data
     {
         public static void Initialize(ModelBuilder builder)
         {
-            builder.Entity<Item>().HasData{
+            builder.Entity<Item>().HasData(
                 new Item("Shirt", "Ohio State Shirt", "Nike", 29.99M)
                 {
                     Id = 1
@@ -16,7 +16,7 @@ namespace ironblood.Data
                 {
                     Id = 2
                 }
-            };
+            );
         }
     }
 }
