@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ironblood.Domain.Catalog;
 using ironblood.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ironblood.Api.Controllers
 {
@@ -69,8 +70,8 @@ namespace ironblood.Api.Controllers
                 return NotFound();
             }
 
-            _db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            _db.SaveChanges();
+            _db.Entry(item).State = EntityState.Modified;
+            _db.SaveChanges;
             return NoContent();
         }
 
