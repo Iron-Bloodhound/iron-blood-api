@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ironblood.Api", "ironblood.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ironblood.Domain", "ironblood.Domain\ironblood.Domain.csproj", "{45F5CBA7-5F22-4130-A95B-C4EC7397A903}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4D1C16C6-824A-422B-91C7-DE700384EC38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ironblood.Domain.Tests", "tests\ironblood.Domain.Tests\ironblood.Domain.Tests.csproj", "{197D159C-B84D-4303-9B50-23B82B18C18C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,12 @@ Global
 		{45F5CBA7-5F22-4130-A95B-C4EC7397A903}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45F5CBA7-5F22-4130-A95B-C4EC7397A903}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45F5CBA7-5F22-4130-A95B-C4EC7397A903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{197D159C-B84D-4303-9B50-23B82B18C18C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{197D159C-B84D-4303-9B50-23B82B18C18C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{197D159C-B84D-4303-9B50-23B82B18C18C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{197D159C-B84D-4303-9B50-23B82B18C18C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{197D159C-B84D-4303-9B50-23B82B18C18C} = {4D1C16C6-824A-422B-91C7-DE700384EC38}
 	EndGlobalSection
 EndGlobal
