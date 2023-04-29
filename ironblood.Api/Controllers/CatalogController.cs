@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using ironblood.Domain.Catalog;
 using ironblood.Data;
 using Microsoft.EntityFrameworkCore;
+using ironblood.Api.Security;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ironblood.Api.Controllers
 {
@@ -76,6 +78,7 @@ namespace ironblood.Api.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize("delete:catalog")]
         public IActionResult Delete(int id)
         {
             var item = _db.Items.Find(id);
