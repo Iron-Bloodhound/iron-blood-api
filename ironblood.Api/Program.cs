@@ -35,6 +35,13 @@ builder.Services.AddDbContext<StoreContext>(options =>
     options.UseSqlite("Data Source=../Registrar.sqlite",
     b => b.MigrationsAssembly("ironblood.Api"))
 );
+
+builder.Services.AddCors(options => {
+    options.AddDefaultPolicy(builder => {
+        builder.WithOrigins("http://localhost::3000").AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
