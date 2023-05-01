@@ -4,6 +4,7 @@ using ironblood.Data;
 using Microsoft.EntityFrameworkCore;
 using ironblood.Api.Security;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Policy;
 
 namespace ironblood.Api.Controllers
 {
@@ -23,7 +24,15 @@ namespace ironblood.Api.Controllers
         {
             return Ok(_db.Items);
         }
-        
+
+        //Made it as far as getting the code from Auth0 but could not figure out how to get it run with it in here. 
+        //Just wanted to show we at least got this far. 
+        //
+        //### GET Token from Auth0
+        //curl --request POST \
+        //--Url https://dev-4d632sdt18goxks6.us.auth0.com/oauth/token \
+        //--header 'content-type: application/json' \
+        //--data '{"client_id":"hOLVQPlPgPsjsFadykWL6eRFUZGc22hv","client_secret":"yNFfhODlmhfxD0Gd3qUG6IXpwCXNMoY77M7fBp_uukLFerCurrcUXrK5DRY0QOb2","audience":"http://localhost:5253/swagger/index.html","grant_type":"client_credentials"}'
 
         [HttpGet("{id:int}")]
         public IActionResult GetItem(int id)
@@ -79,6 +88,7 @@ namespace ironblood.Api.Controllers
 
         [HttpDelete("{id:int}")]
         [Authorize("delete:catalog")]
+
         public IActionResult Delete(int id)
         {
             var item = _db.Items.Find(id);
